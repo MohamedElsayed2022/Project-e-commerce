@@ -10,7 +10,7 @@ import CardContainerHook from "../../hook/product/card-container-hook";
 const CardProductsContainer = ({ title, btntitle, PathTitle, products }) => {
     const [favProd] = CardContainerHook()
   return (
-    <Container>
+    <Container >
       {products ? (
         <SubTitle title={title} btntitle={btntitle} PathTitle={PathTitle} />
       ) : null}

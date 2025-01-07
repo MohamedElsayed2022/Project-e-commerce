@@ -8,7 +8,7 @@ const SidebarSearchHook = () => {
     const [items, pagination, onPress, getProduct, results] = ViewSearchProductsHook()
     const dispatch = useDispatch();
     const allCategories = useSelector((state) => state.allcategory.category);
-    const allBrands = useSelector((state) => state.allbrand.brand);
+    const allBrands = useSelector((state) => state.allbrand.brands);
 
     useEffect(() => {
         const fetchData = async () => {

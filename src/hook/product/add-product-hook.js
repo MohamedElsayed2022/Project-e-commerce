@@ -26,9 +26,11 @@ const AdminAddProductHook = () => {
 
   const dispatch = useDispatch();
   const category = useSelector((state) => state.allcategory.category);
-  const brand = useSelector((state) => state.allbrand.brand);
+  const brand = useSelector((state) => state?.allbrand?.brands);
   const subcategory = useSelector((state) => state.subcategory.subcategory);
   const product = useSelector((state) => state.allproducts.products);
+
+  console.log("Product Brand : " , brand?.data)
   useEffect(() => {
     // if(product)
     dispatch(getAllProducts());
@@ -77,21 +79,22 @@ const AdminAddProductHook = () => {
     const newColors = colors.filter((e) => e !== color);
     setColors(newColors);
   };
+
+
+  
    //to convert base 64 to file
-   function dataURLtoFile(dataurl, filename) {
-    const [header, base64Data] = dataurl.split(',');
-    const mime = header.match(/:(.*?);/)[1];
-    const binaryString = atob(base64Data);
-    const len = binaryString.length;
-    const uint8Array = new Uint8Array(len);
-
-    for (let i = 0; i < len; i++) {
-        uint8Array[i] = binaryString.charCodeAt(i);
+   const dataURLtoFile = (dataurl, filename) => {
+    const arr = dataurl.split(',')
+    const mime = arr[0].match(/:(.*?);/)[1]
+    const bstr = atob(arr[1])
+    let n = bstr.length
+    const u8arr = new Uint8Array(n)
+    while (n) {
+      u8arr[n - 1] = bstr.charCodeAt(n - 1)
+      n -= 1 // to make eslint happy
     }
-
-    return new File([uint8Array], filename, { type: mime });
-}
-
+    return new File([u8arr], filename, { type: mime })
+  }
 
   //insert data with images
   const handleSubmit = async (e) => {

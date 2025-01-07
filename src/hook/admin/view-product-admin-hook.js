@@ -11,7 +11,7 @@ const ViewProductAdminHook = () => {
 
     const allProducts = useSelector((state) => state.allproducts.allProducts);
 
-    const items = allProducts?.results || [];
+    const items = allProducts?.data || [];
     const pagination = allProducts?.paginationResult || [];
 
     // Get all products by page number

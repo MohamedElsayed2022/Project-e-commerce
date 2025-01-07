@@ -38,6 +38,8 @@ const AdminAddProduct = () => {
     handleSubmit
   ] = AdminAddProductHook()
   // const onImageChange = () => {};
+
+  console.log("Brands :- " , brand?.data)
   return (
     <div>
       <Row className="justify-content-start">

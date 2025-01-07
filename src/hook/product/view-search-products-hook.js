@@ -23,10 +23,9 @@ const ViewSearchProductsHook = () => {
 
   const allProducts = useSelector((state) => state.allproducts?.allProducts);
 
-  const items = allProducts?.results || [];
+  const items = allProducts?.data || [];
   const pagination = allProducts?.paginationResult?.numberOfPages || [];
   const results = allProducts?.results || 0;
-
   const onPress = async (page) => {
    
     getStorge()

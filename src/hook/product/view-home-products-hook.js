@@ -12,8 +12,8 @@ const ViewHomeProductsHook = () => {
 
   let items = [];
 
-  if (allProducts?.results) {
-    items = allProducts.results.slice(0, 4);
+  if (allProducts?.data) {
+    items = allProducts.data.slice(0, 4);
   }
 
 

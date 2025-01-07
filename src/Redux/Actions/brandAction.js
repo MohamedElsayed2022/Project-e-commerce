@@ -5,6 +5,7 @@ import { CREATE_BRAND, GET_ALL_BRANDS, GET_ERROR, GET_ONE_BRAND } from "../type"
 export const getAllBrand =(limit)=> async(dispatch)=>{
  try{
    const response = await useGetData(`/api/v1/brands/?limit=${limit}`)
+   console.log("Response" , response)
    dispatch( {
     type : GET_ALL_BRANDS ,
     payload : response 

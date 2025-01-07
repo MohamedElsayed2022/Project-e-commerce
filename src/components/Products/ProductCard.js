@@ -30,9 +30,10 @@ const ProductCard = ({ item , favProd }) => {
                   boxShadow: "0 2px 2px 0 rgba(151 , 151 , 151 , .5)",
                 }}
               >
-                <Link to={`/products/${item._id}`} style={{ textDecoration: 'none' }}>
-                    <Card.Img style={{ height: "228px", width: "100%" }} src={item.imageCover} />
+                <Link to={`/products/${item._id}`} style={{ textDecoration: 'none'  }}>
+                    <Card.Img style={{ height: "228px", width: "100%" , padding:"10px"    }}  src={item.imageCover} />
                 </Link>
+                
                 <div className="d-flex justify-content-end mx-2 mt-3">
                     <img src={favImg} alt="" onClick={handleFav} className="text-center" style={{height:"24px" , width:"26px", cursor:"pointer"}}/>
                 </div>

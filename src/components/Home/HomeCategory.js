@@ -29,10 +29,10 @@ const HomeCategory = () => {
             )
           ) : (
             <div className="d-flex justify-content-center align-items-center gap-2 fs-3">
-              <Spinner animation="border" style={{ color: '#55cfdf' }} className="text-center" />
-              <Spinner animation="border" style={{ color: '#55cfdf' }} className="text-center" />
-              <Spinner animation="border" style={{ color: '#55cfdf' }} className="text-center" />
-              <Spinner animation="border" style={{ color: '#55cfdf' }} className="text-center" />
+              <Spinner animation="border" style={{ color: '#000' }} className="text-center" />
+              <Spinner animation="border" style={{ color: '#000' }} className="text-center" />
+              <Spinner animation="border" style={{ color: '#000' }} className="text-center" />
+              <Spinner animation="border" style={{ color: '#000' }} className="text-center" />
             </div>
           )
         }
