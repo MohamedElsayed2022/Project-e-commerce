@@ -7,6 +7,13 @@ import { ToastContainer } from 'react-toastify'
 
 const ChoosePayMethod = () => {
    const [handelChooseAddress , addressDetails , handleCreateOrderCash ] = OrderPayCashHook()
+   const [
+    ,
+    ,
+    ,
+    totalCartPrice,
+    ,
+  ] = ViewProductInCart();
     const [Addresses] = ViewAddressesHook()
    console.log("Addresses" , Addresses)
    console.log("Address Details :- " , addressDetails)
@@ -69,7 +76,7 @@ const ChoosePayMethod = () => {
 
     <Row>
         <Col xs="12" className="d-flex justify-content-end">
-            <div className="product-price d-inline   border">34000 جنية</div>
+            <div className="product-price d-inline   border">{totalCartPrice} جنية</div>
             <div onClick={handleCreateOrderCash} className="product-cart-add px-3 pt-2 d-inline me-2"> اتمام الشراء</div>
         </Col>
     </Row>

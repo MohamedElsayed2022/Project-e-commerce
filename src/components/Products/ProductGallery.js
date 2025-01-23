@@ -17,10 +17,11 @@ const ProductGallery = () => {
                 items={images}
                 showFullscreenButton={false}
                 isRTL={true}
-                renderLeftNav={LeftButton}
                 showPlayButton={false}
                 showThumbnails={false}
                 renderRightNav={RightButton}
+                renderLeftNav={LeftButton}
+
             />
         </div>
     );

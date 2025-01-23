@@ -46,7 +46,7 @@ const AddRateHook = (prodID) => {
                 notify("تمت اضافة التقييم بنجاح", "success")
                 setTimeout(() => {
                     window.location.reload(false)
-                }, 1000);
+                }, 1500);
             }
         }
     }

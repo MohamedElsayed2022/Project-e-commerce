@@ -8,10 +8,6 @@ import { getOrdersPage } from "../../Redux/Actions/ordersAction";
 
 const UserAllOrder = () => {
   const [username , results ,paginate , orderData , onPress  ] = UserGetAllOrdersHook();
-  console.log("Results: ", results);
-  console.log("paginate: ", paginate);
-  console.log("orderData: ", orderData);
-  console.log("orderData: ", orderData[0]);
   
   return (
     <div>

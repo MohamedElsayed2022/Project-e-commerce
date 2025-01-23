@@ -1,10 +1,8 @@
 import React, { useEffect, useState } from "react";
 import { Col, Row } from "react-bootstrap";
-import mobile from "../../images/mobile.png";
 import { Link } from "react-router-dom";
 
 const UserAllOrderCard = ({ cart }) => {
-  console.log("Cart:", cart);
   const [items, setItems] = useState(null);
   useEffect(() => {
     if (cart) {
@@ -25,6 +23,7 @@ const UserAllOrderCard = ({ cart }) => {
               height="120px"
               src={items?.product?.imageCover}
               alt=""
+              className="rounded"
             />
           </Link>
         </Col>

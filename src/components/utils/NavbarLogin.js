@@ -9,6 +9,7 @@ import Cart from '../../images/cart.png'
 import { Link, useNavigate } from "react-router-dom";
 import NavbarSearchHook from "../../hook/navbar/navbar-search-hook";
 import ViewProductInCart from "../../hook/cart/view-product-in-cart";
+import notify from "../../hook/useNotification";
 const NavbarLogin = () => {
   const DataUser = JSON.parse(localStorage.getItem("user"))
   console.log("User : " ,(DataUser))
@@ -28,8 +29,7 @@ const NavbarLogin = () => {
     localStorage.removeItem("user")
     localStorage.removeItem("token")
     setUser('')
-    navigate("/login")
-    window.location.reload(false)
+    window.location.replace("/login");
     
 }
 

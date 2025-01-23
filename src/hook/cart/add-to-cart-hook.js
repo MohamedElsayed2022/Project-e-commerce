@@ -48,7 +48,7 @@ const AddToCartHook = (prodID , item) => {
             notify("تمت الاضافة الى السلة بنجاح", "success")
             setTimeout(() => {
                 window.location.reload(false);
-            })            
+            },1500)            
         }else {
             notify("قم بتسجيل الدخول اولا", "warn")
         }
