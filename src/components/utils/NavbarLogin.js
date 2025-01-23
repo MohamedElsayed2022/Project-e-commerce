@@ -35,7 +35,7 @@ const NavbarLogin = () => {
 
 // cart number
 
-const [cartNum , cartItems , couponName , totalCartPrice , totalCartPriceAfterDiscount]= ViewProductInCart()
+const [cartNum ,  ,  ,  , ]= ViewProductInCart()
 if(cartNum)
   console.log(cartNum)
     return (
