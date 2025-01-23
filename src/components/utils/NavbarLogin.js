@@ -10,6 +10,8 @@ import { Link, useNavigate } from "react-router-dom";
 import NavbarSearchHook from "../../hook/navbar/navbar-search-hook";
 import ViewProductInCart from "../../hook/cart/view-product-in-cart";
 const NavbarLogin = () => {
+  const DataUser = JSON.parse(localStorage.getItem("user"))
+  console.log("User : " ,(DataUser))
   const [ OnChangeSearch , searchWord] = NavbarSearchHook()
   const navigate = useNavigate()
   let word = ""

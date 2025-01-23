@@ -37,11 +37,11 @@ const SearchCountResult = ({ title , onClick}) => {
           hover
         >
             <div className="card-filter">
-                <div onClick={()=>ClickMe("بدون ترتيب")}  className="border-bottom card-filter-item"> بدون ترتيب</div>
-                <div onClick={()=>ClickMe("الاكثر مبيعا")} className="border-bottom card-filter-item">الاكثر مبيعا</div>
-                <div onClick={()=>ClickMe("الاكثر تقييما")} className="border-bottom card-filter-item">الاكثر تقيما</div>
-                <div  onClick={()=>ClickMe("السعر من الاقل الى الاعلى")} className="border-bottom card-filter-item"> السعر من الاقل الى الاعلى</div>
-                <div onClick={()=>ClickMe("السعر من الاعلى الى الاقل")} className="border-bottom card-filter-item"> السعر من الاعلى الى الاقل</div>
+                <div onClick={()=>ClickMe("بدون ترتيب")}  className="border-bottom card-filter-item fw-bold"> بدون ترتيب</div>
+                <div onClick={()=>ClickMe("الاكثر مبيعا")} className="border-bottom card-filter-item fw-bold">الاكثر مبيعا</div>
+                <div onClick={()=>ClickMe("الاكثر تقييما")} className="border-bottom card-filter-item fw-bold">الاكثر تقيما</div>
+                <div  onClick={()=>ClickMe("السعر من الاقل الى الاعلى")} className="border-bottom card-filter-item fw-bold"> السعر من الاقل الى الاعلى</div>
+                <div onClick={()=>ClickMe("السعر من الاعلى الى الاقل")} className="border-bottom card-filter-item fw-bold" > السعر من الاعلى الى الاقل</div>
 
             </div>
         </UnopDropdown>

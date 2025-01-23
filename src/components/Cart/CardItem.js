@@ -35,10 +35,11 @@ const CardItem = ({ product }) => {
       <img
         src={product?.product?.imageCover || mobile}
         width="160px"
-        height="197px"
+        height="100%"
+        style={{borderRadius:"10px"}}
         alt=""
       />
-      <div className="w-100">
+      <div className="w-100 p-3">
         <Row className="justify-content-between">
           <Col sm="12" className="d-flex justify-content-between">
             <div className="cat-text p-2 d-inline">
@@ -57,7 +58,7 @@ const CardItem = ({ product }) => {
             </div>
           </Col>
         </Row>
-        <Row className="justify-content-center mt-2">
+        <Row className="justify-content-center ">
           <Col sm="12" className=" d-flex flex-row justify-content-start">
             <div className="cat-title pt-2 d-inline">
               {product?.product?.title}
@@ -68,7 +69,7 @@ const CardItem = ({ product }) => {
           </Col>
         </Row>
         <Row>
-          <Col sm="12" className="mt-1 d-flex">
+          <Col sm="12" className="mt-3 d-flex">
             <div className="cat-text d-inline">الماركة : </div>
             <div className="barnd-text me-1 d-inline mx-1">
               {product?.product?.brand?.name}
