@@ -16,7 +16,7 @@ const ProductText = () => {
   const [handleAddtoCart, indexColor, handleColor] = AddToCartHook(id, item);
 
   return (
-    <div>
+    <div className="p-3">
       <Row>
         <div className="cat-text"> {cat.name}</div>
       </Row>
@@ -31,28 +31,23 @@ const ProductText = () => {
       <Row className="mt-4">
         <Col>
           <div className="cat-text d-inline">الماركة :</div>
-          <div className="brand-text d-inline">{brand.name}</div>
+          <div className="cat-title d-inline">{brand.name}</div>
         </Col>
       </Row>
       <Row>
-        <Col md="8" className="mt-1 d-flex">
-          {item.availableColors
-            ? item.availableColors.map((color, index) => (
-                <div
-                  className="color border ms-2"
-                  onClick={() => handleColor(color, index)}
-                  key={index}
-                  style={{
-                    backgroundColor: color,
-                    border: indexColor === index ? "3px solid black" : "none",
-                  }}
-                ></div>
-              ))
-            : null}
-          <div
-            className="color border ms-2"
-            style={{ backgroundColor: "#E52C2C" }}
-          ></div>
+      <Col md="8" className="color-options d-flex mt-3">
+          {item.availableColors &&
+            item.availableColors.map((color, index) => (
+              <div
+                key={index}
+                className="color-box ms-2"
+                onClick={() => handleColor(color, index)}
+                style={{
+                  backgroundColor: color,
+                  border: indexColor === index ? "3px solid black" : "1px solid #ccc",
+                }}
+              ></div>
+            ))}
         </Col>
         <Row className="mt-4">
         <Col>
@@ -69,7 +64,7 @@ const ProductText = () => {
           <div className="product-description d-inline">{item.description}</div>
         </Col>
       </Row>
-      <Row className="mt-4">
+      <Row className="mt-5">
         <Col md="12">
           {item.priceAfterDiscount >= 1 ? (
             <div className="product-price d-inline px-3 py-3 border">

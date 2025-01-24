@@ -1,16 +1,9 @@
 import React, { useEffect, useState } from "react";
 import { Col } from "react-bootstrap";
-import Button from "react-bootstrap/Button";
 import Card from "react-bootstrap/Card";
-import prod1 from '../../images/prod1.png'
-import favoff from '../../images/fav-off.png'
-import favon from '../../images/fav-on.png'
 import rate from '../../images/rate.png'
 import { Link } from "react-router-dom";
-import { useDispatch, useSelector } from "react-redux";
-import { addProductToWishlist, removeProductFromWishlist } from "../../Redux/Actions/wishlistAction";
 import { ToastContainer } from "react-toastify";
-import notify from "../../hook/useNotification";
 import ProductCardHook from "../../hook/product/product-card-hook";
 const ProductCard = ({ item , favProd }) => {
    const [favImg , handleFav ] = ProductCardHook(item , favProd)

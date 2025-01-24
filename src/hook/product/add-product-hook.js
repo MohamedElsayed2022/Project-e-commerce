@@ -30,22 +30,12 @@ const AdminAddProductHook = () => {
   const subcategory = useSelector((state) => state.subcategory.subcategory);
   const product = useSelector((state) => state.allproducts.products);
 
-  console.log("Product Brand : " , brand?.data)
   useEffect(() => {
-    // if(product)
     dispatch(getAllProducts());
     dispatch(getAllBrand())
-  }, []);
-
-  // if (category) console.log(category.data);
-
-  useEffect(() => {
     dispatch(getAllCategory());
-    // dispatch(getAllBrand());
   }, []);
-  useEffect(() => {
-    dispatch(getAllBrand());
-  }, []);
+
   const onSelect = (selectedList) => {
     setSelectedSubID(selectedList);
   };
@@ -162,7 +152,6 @@ const AdminAddProductHook = () => {
       (item, index) => dataURLtoFile(images[index], Math.random() + ".png")
     );
 
-    console.log(imageCover);
     const formData = new FormData();
     formData.append("title", prodName);
     formData.append("description", prodDescription);
@@ -178,14 +167,11 @@ const AdminAddProductHook = () => {
     colors.map((color) => formData.append("availableColors", color));
     itemImages.map((item) => formData.append("images", item));
     console.log(images);
-    setTimeout(async () => {
       setLoading(true);
       await dispatch(createProduct(formData));
       setLoading(false);
-      notify("تم اضافة المنتج بنجاح", "success");
-    }, 1000);
 
-    notify("تم اضافة المنتج بنجاح", "success");
+    // notify("تم اضافة المنتج بنجاح", "success");
   };
   useEffect(() => {
     if (loading === false) {
@@ -204,7 +190,10 @@ const AdminAddProductHook = () => {
 
       if (product) {
         if (product.status === 201) {
-          notify("تم الاضافة بنجاح", "success");
+          notify("تم اضافة المنتج بنجاح", "success");
+          setTimeout(() => {
+            window.location.reload(false)
+          }, 1000);
         } else {
           notify("هناك مشكله", "error");
         }

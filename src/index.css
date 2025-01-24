@@ -243,7 +243,7 @@ body {
 .cat-text {
   color: #979797;
   font-family: "Almarai";
-  font-size: 12px;
+  font-size: 17px;
   font-weight: bold;
   letter-spacing: 0;
   line-height: 23px;
@@ -252,8 +252,8 @@ body {
 
 .cat-title {
   color: #555550;
-  font-family: Almarai;
-  font-size: 14px;
+  font-family: "Almarai";
+  font-size: 18px;
   font-weight: normal;
   text-align: right;
 }
@@ -299,8 +299,8 @@ body {
 }
 .product-description {
   color: #555550;
-  font-family: Cairo;
-  font-size: 14px;
+  font-family: "Cairo";
+  font-size: 25px;
   font-weight: 600;
   letter-spacing: 0;
   line-height: 26px;
@@ -742,4 +742,125 @@ font-weight: bold !important;
 .badge {
   font-size: 12px !important;
 font-weight: bold !important;
+}
+
+
+.product-details-container {
+  padding: 20px;
+  font-family: "Cairo", sans-serif; /* Replace with your preferred font */
+  background-color: #f9f9f9; /* Subtle background */
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+}
+
+.category-text {
+  font-size: 1.2rem;
+  color: #555;
+  margin-bottom: 15px;
+  font-weight: 600;
+}
+
+.product-title {
+  font-size: 1.5rem;
+  color: #333;
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+.product-rating {
+  font-size: 1rem;
+  color: #ff9500;
+  font-weight: 600;
+}
+
+.product-text {
+  font-size: 1rem;
+  color: #444;
+  font-weight: 500;
+}
+
+.product-brand,
+.product-quantity {
+  font-size: 1rem;
+  color: #333;
+  font-weight: 600;
+}
+
+.color-options .color-box {
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.color-options .color-box:hover {
+  transform: scale(1.1);
+}
+
+.product-specifications {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 600;
+  margin-bottom: 10px;
+}
+
+.product-description {
+  font-size: 1rem;
+  color: #555;
+  line-height: 1.5;
+}
+
+.product-price {
+  font-size: 1.2rem;
+  color: #333;
+  font-weight: 700;
+  margin-bottom: 10px;
+}
+
+.price-original {
+  text-decoration: line-through;
+  color: #999;
+  margin-right: 10px;
+}
+
+.price-discount {
+  color: #e52c2c;
+}
+
+.add-to-cart-btn {
+  background-color: #007bff;
+  color: #fff;
+  font-size: 1rem;
+  font-weight: 600;
+  border: none;
+  border-radius: 4px;
+  padding: 10px 20px;
+  cursor: pointer;
+  transition: all 0.3s ease-in-out;
+}
+
+.add-to-cart-btn:hover {
+  background-color: #0056b3;
+}
+
+@media (max-width: 768px) {
+  .product-details-container {
+    padding: 15px;
+  }
+
+  .product-title {
+    font-size: 1.3rem;
+  }
+
+  .product-text,
+  .product-brand,
+  .product-quantity {
+    font-size: 0.9rem;
+  }
+
+  .add-to-cart-btn {
+    font-size: 0.9rem;
+    padding: 8px 15px;
+  }
 }
