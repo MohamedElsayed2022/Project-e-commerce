@@ -7,24 +7,28 @@ import LeftButton from "./LeftButton";
 import { useParams } from "react-router-dom";
 import { getOneProduct } from "../../Redux/Actions/productsAction";
 import ViewProductsDetailsHook from "../../hook/product/view-products-details-hook";
+import { Col, Row } from "react-bootstrap";
 
 const ProductGallery = () => {
-  const {id} = useParams()
-  const [item , images] = ViewProductsDetailsHook(id)
-    return (
+  const { id } = useParams();
+  const [item, images] = ViewProductsDetailsHook(id);
+  return (
+    <Row>
+      <Col xs={12} className="d-flex">
         <div className="product-gallary-card d-flex justify-content-center align-items-center pt-2">
-            <ReactImageGallery 
-                items={images}
-                showFullscreenButton={false}
-                isRTL={true}
-                showPlayButton={false}
-                showThumbnails={false}
-                renderRightNav={RightButton}
-                renderLeftNav={LeftButton}
-
-            />
+          <ReactImageGallery
+            items={images}
+            showFullscreenButton={false}
+            isRTL={true}
+            showPlayButton={false}
+            showThumbnails={false}
+            renderRightNav={RightButton}
+            renderLeftNav={LeftButton}
+          />
         </div>
-    );
+      </Col>
+    </Row>
+  );
 };
 
 export default ProductGallery;

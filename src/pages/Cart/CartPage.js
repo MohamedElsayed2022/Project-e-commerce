@@ -8,7 +8,7 @@ import { ToastContainer } from "react-toastify";
 
 const CartPage = () => {
   const [
-    cartNum,
+    ,
     cartItems,
     couponNameRes,
     totalCartPrice,

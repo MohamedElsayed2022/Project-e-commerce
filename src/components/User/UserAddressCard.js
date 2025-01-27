@@ -3,17 +3,16 @@ import { Button, Col, Modal, Row } from "react-bootstrap";
 import edit from "../../images/edit.png";
 import deleteicon from "../../images/delete.png";
 import { Link } from "react-router-dom";
-import ViewAddressesHook from "../../hook/user/view-addresses-hook";
 import DeleteAddressHook from "../../hook/user/delete-address-hook";
-const UserAddressCard = ({address}) => {
-  const [ show , handleClose , handleShow ,  handelDelete] = DeleteAddressHook(address._id)
+
+const UserAddressCard = ({ address }) => {
+  const [show, handleClose, handleShow, handelDelete] = DeleteAddressHook(address._id);
 
   return (
-    <div className="user-address-card  px-2 my-3 ">
-        <Modal show={show} onHide={handleClose}>
+    <div className="user-address-card p-3 my-3">
+      <Modal show={show} onHide={handleClose}>
         <Modal.Header>
           <Modal.Title>
-            {" "}
             <div className="font">تاكيد الحذف</div>
           </Modal.Title>
         </Modal.Header>
@@ -31,12 +30,12 @@ const UserAddressCard = ({address}) => {
       </Modal>
 
       <Row className="d-flex justify-content-between ">
-        <Col xs="4">
-          <div className="p-2">{address.alias}</div>
+        <Col xs="12" sm="4" className="d-flex align-items-center">
+          <div className="">{address.alias}</div>
         </Col>
-        <Col xs="4" className="d-flex justify-content-end">
+        <Col xs="12" sm="8" className="d-flex justify-content-end mt-2 mt-sm-0">
           <div className="d-flex p-2">
-          <div className="d-flex ms-2">
+            <div className="d-flex ms-2">
               <img
                 src={edit}
                 height="17px"
@@ -48,7 +47,7 @@ const UserAddressCard = ({address}) => {
                 <p className="item-delete-edit d-inline"> تعديل</p>
               </Link>
             </div>
-            <div className="d-flex">
+            <div className="d-flex ms-3">
               <img
                 src={deleteicon}
                 height="17px"

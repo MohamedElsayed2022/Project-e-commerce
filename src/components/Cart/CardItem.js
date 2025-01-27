@@ -58,8 +58,8 @@ const CardItem = ({ product }) => {
             </div>
           </Col>
         </Row>
-        <Row className="justify-content-center ">
-          <Col sm="12" className=" d-flex flex-row justify-content-start">
+        <Row className="justify-content-center  ">
+          <Col sm="12" className=" d-flex flex-row justify-content-start align-items-center">
             <div className="cat-title pt-2 d-inline">
               {product?.product?.title}
             </div>

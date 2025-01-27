@@ -1,66 +1,60 @@
-import React, { useState } from "react";
+import React from "react";
 import { Row, Col } from "react-bootstrap";
 import { useParams } from "react-router-dom";
 import ViewProductsDetailsHook from "../../hook/product/view-products-details-hook";
-import { useDispatch, useSelector } from "react-redux";
-import { useEffect } from "react";
-import { getOneCategory } from "../../Redux/Actions/categoryAction";
 import AddToCartHook from "../../hook/cart/add-to-cart-hook";
 import { ToastContainer } from "react-toastify";
-import ViewProductInCart from "../../hook/cart/view-product-in-cart";
-import rate from '../../images/rate.png'
-import ReactStars from 'react-rating-stars-component'
+// import ReactStars from "react-rating-stars-component";
 
 const ProductText = () => {
   const { id } = useParams();
   const [item, images, cat, brand] = ViewProductsDetailsHook(id);
 
   const [handleAddtoCart, indexColor, handleColor] = AddToCartHook(id, item);
+   let rating 
+   if(item.ratingsAverage)
+    rating = item.ratingsAverage
+
+  // إعدادات ReactStars
   const setting = {
     size: 20,
     count: 5,
     color: "#979797",
     activeColor: "#ffc107",
-    value: item.ratingsAverage,
+    value: rating, // إذا لم تكن موجودة، عيّن القيمة الافتراضية 0
     a11y: true,
     isHalf: true,
     emptyIcon: <i className="far fa-star" />,
     halfIcon: <i className="fa fa-star-half-alt" />,
     filledIcon: <i className="fa fa-star" />,
-    // onChange: newValue => {
-    //     OnChangeRateValue(newValue);
-    // }
-};
+  };
+
   return (
     <div className="p-3">
-     
       <Row>
         <Col md="8">
-        <div className="cat-text d-inline">اسم المنتج :</div>
-
-          <div className="cat-title d-inline">
-            {item.title}
-            {/* <div className="cat-rate d-inline mx-3">{item.ratingsAverage  ? item.ratingsAverage : 0}</div> */}
-          </div>
+          <div className="cat-text d-inline">اسم المنتج :</div>
+          <div className="cat-title d-inline">{item.title}</div>
         </Col>
       </Row>
 
       <Row className="mt-4">
-      <Col>
+        <Col>
           <div className="cat-text d-inline">التصنيف :</div>
-          <div className="cat-title d-inline">{cat.name}</div>
+          <div className="cat-title d-inline">{cat?.name}</div>
         </Col>
-        {/* <div className="cat-text"> {cat.name}</div> */}
       </Row>
+
       <Row className="mt-4">
         <Col>
           <div className="cat-text d-inline">الماركة :</div>
-          <div className="cat-title d-inline">{brand.name}</div>
+          <div className="cat-title d-inline">{brand?.name}</div>
         </Col>
       </Row>
+
       <Row>
-      <Col md="8" className="color-options d-flex mt-3">
-          {item.availableColors &&
+        <Col md="8" className="color-options d-flex mt-3">
+          {item?.availableColors &&
             item.availableColors.map((color, index) => (
               <div
                 key={index}
@@ -73,52 +67,34 @@ const ProductText = () => {
               ></div>
             ))}
         </Col>
-        <Row className="mt-4">
-        <Col>
-          <div className="cat-text d-inline">الكمية المتاحة :</div>
-          <div className="brand-text d-inline cat-title">{item.quantity}</div>
-        </Col>
       </Row>
-      </Row>
+
       <Row className="mt-4">
-        {/* <div className="cat-text">المواصفات :</div>
-      </Row>
-      <Row>
-        <Col md="10">
-          <div className="product-description d-inline">{item.description}</div>
-        </Col> */}
-          <Col>
-          <div className="cat-text d-inline"> المواصفات :</div>
+        <Col>
+          <div className="cat-text d-inline">المواصفات :</div>
           <div className="brand-text d-inline cat-title">{item.description}</div>
         </Col>
-
       </Row>
-      <Row className="mt-4">
-      
-          <Col>
-          <div className="cat-text d-inline align-items-center"> التقييم  :</div>
-            {/* <div className="cat-rate d-inline mx-3">{item.ratingsAverage  ? item.ratingsAverage : 0} </div>
-            <img width="20px" src={rate} alt="avragerating"/> */}
-               <ReactStars {...setting} />
-                                {/* <input
-                                    onChange={onChangeRateText}
-                                    value={newRateText}
-                                    type="text"
-                                    className='font w-100'
-                                    style={{ border: 'none' }}
-                                /> */}
-            </Col>
-            
 
-      </Row>
+      {/* <Row className="mt-4">
+        <Col>
+          <div className="cat-text d-inline align-items-center">التقييم :</div>
+          <div className="brand-text d-inline card-rate">{item?.ratingsAverage}</div>
+          <div className="brand-text d-inline cat-title">{item.description}</div>
+
+        </Col>
+      </Row> */}
+
       <Row className="mt-5">
         <Col md="12">
           {item.priceAfterDiscount >= 1 ? (
             <div className="product-price d-inline px-3 py-3 border">
-             <span style={{textDecorationLine:"line-through"}}>{item.price}</span> {item.priceAfterDiscount} جنية
+              <span style={{ textDecorationLine: "line-through" }}>{item.price}</span> {item.priceAfterDiscount} جنية
             </div>
           ) : (
-            <div className="product-price d-inline px-3 py-3 border"><span>{item.price}</span>جنية</div> 
+            <div className="product-price d-inline px-3 py-3 border">
+              <span>{item.price}</span> جنية
+            </div>
           )}
           <div
             className="product-cart-add px-3 py-3 d-inline mx-3"
