@@ -869,3 +869,193 @@ font-weight: bold !important;
 
 
 
+.sidebar-container {
+  background-color: #fff;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.filter-item {
+  margin-bottom: 8px;
+}
+
+.filter-item .form-check-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.price-filter {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.price-input {
+  width: 100px;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-sub {
+  font-size: 14px;
+  color: #555;
+}
+
+
+
+/* زر الفلتر (يظهر فقط في الشاشات الصغيرة) */
+.filter-button {
+  position: fixed;
+  top: 50%;
+  right: 0;
+  transform: translateY(-50%);
+  z-index: 1000;
+  border-radius: 5px 0 0 5px;
+  padding: 10px 15px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Offcanvas */
+.filter-offcanvas {
+  width: 300px !important; /* عرض الـ Offcanvas */
+}
+
+.filter-title {
+  font-size: 18px;
+  font-weight: bold;
+  color: #333;
+  margin-bottom: 10px;
+}
+
+.filter-item {
+  margin-bottom: 8px;
+}
+
+.filter-item .form-check-label {
+  font-size: 14px;
+  color: #555;
+}
+
+.price-filter {
+  background-color: #fff;
+  padding: 10px;
+  border-radius: 6px;
+  border: 1px solid #ddd;
+}
+
+.price-input {
+  width: 100px;
+  font-size: 14px;
+  padding: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+}
+
+.filter-sub {
+  font-size: 14px;
+  color: #555;
+}
+
+
+/*--Search Header--*/
+
+/* تصميم عام */
+.search-count-container {
+  flex-wrap: wrap; /* السماح للعناصر بالانتقال لأسفل في الشاشات الصغيرة */
+  background-color: #f8f9fa; /* لون خلفية خفيف */
+  border-radius: 12px; /* زوايا مدورة */
+}
+
+.sub-tile {
+  font-size: 18px; /* زيادة حجم النص */
+  font-weight: bold;
+  color: #333;
+}
+
+.sort-trigger {
+  display: flex;
+  align-items: center;
+  cursor: pointer;
+  padding: 10px 15px; /* زيادة المساحة */
+  background-color: #fff; /* لون خلفية */
+  border: 1px solid #ddd; /* إطار خفيف */
+  border-radius: 8px; /* زوايا مدورة */
+  transition: background-color 0.3s ease; /* تأثير انتقالي */
+}
+
+.sort-trigger:hover {
+  background-color: #e9ecef; /* لون خلفية عند الـ hover */
+}
+
+.sort-icon {
+  width: 20px;
+  height: 20px;
+}
+
+.sort-text {
+  margin-right: 5px;
+}
+
+.card-filter {
+  background-color: #fff;
+  border: 1px solid #ddd;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+  padding: 10px;
+  width: 200px; /* زيادة عرض القائمة */
+}
+
+.card-filter-item {
+  padding: 12px 16px; 
+  cursor: pointer;
+  transition: background-color 0.3s ease; /* تأثير انتقالي */
+  border-radius: 6px; /* زوايا مدورة */
+}
+
+.card-filter-item:hover {
+  background-color: #343a40; /* لون خلفية غامق */
+  color: #fff; /* لون نص أبيض */
+}
+
+/* تصميم للشاشات الصغيرة */
+@media (max-width: 768px) {
+  .search-count-container {
+    flex-direction: column; /* العناصر في عمود واحد */
+    align-items: flex-start; /* محاذاة العناصر إلى اليسار */
+    padding: 15px; /* تقليل المساحة في الشاشات الصغيرة */
+  }
+
+  .sub-tile {
+    font-size: 16px; /* تقليل حجم النص */
+    margin-bottom: 10px; /* إضافة مسافة أسفل العنوان */
+  }
+
+  .sort-trigger {
+    font-size: 14px; /* تقليل حجم النص */
+    padding: 8px 12px; /* تقليل المساحة */
+  }
+
+  .sort-icon {
+    width: 16px; /* تقليل حجم الأيقونة */
+    height: 16px;
+  }
+
+  .card-filter {
+    width: 100%; /* جعل القائمة تأخذ العرض الكامل */
+  }
+
+  .card-filter-item {
+    font-size: 14px; /* تقليل حجم النص */
+    padding: 10px 12px; /* تقليل المساحة */
+  }
+}
