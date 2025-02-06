@@ -1,21 +1,26 @@
 import React from "react";
-import { Row } from "react-bootstrap";
+import { Row, Spinner } from "react-bootstrap";
 import CardProductsContainer from "../Products/CardProductsContainer";
 import FavouriteProductsHook from "../../hook/user/favourite-products-hook";
 
 const UserFavoriteProduct = () => {
-  const [favProd] = FavouriteProductsHook()
+  const [favProd] = FavouriteProductsHook();
 
   return (
     <>
-      <div className="admin-content-text pb-2"> قائمة المفضلة </div>
-      <Row className="justify-content-start">
-        {favProd ? (
+      <div className="admin-content-text"> قائمة المفضلة </div>
+      <Row className="justify-content-start" style={{marginTop:"-13px"}}>
+        {favProd && favProd.length > 0 ? (
           <CardProductsContainer products={favProd} title="" btntitle="" />
         ) : (
-          <h2 className="text-danger text-center align-items-center justify-content-center mt-2">
-            لاتوجد منتجات مفضلة حاليا
-          </h2>
+          <h2 className="text-dark  mt-2">
+          <div className="d-flex justify-content-center align-items-center gap-2 fs-3">
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+      </div>
+        </h2>
         )}
       </Row>
     </>

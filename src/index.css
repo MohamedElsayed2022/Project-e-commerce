@@ -453,10 +453,12 @@ body {
   padding-bottom: 5px;
   padding-right: 10px;
   padding-left: 10px !important;
-  border-radius: 0 !important;
+  border-top-right-radius: 0 !important;
+  border-bottom-right-radius: 0 !important;
+  border-top-left-radius: 10px;
   background-color: #272727;
   color: #ffff !important;
-  font-family: "Almarai";
+  /* font-family:; */
   font-size: 12px;
   font-weight: normal;
 }
@@ -1059,3 +1061,7 @@ font-weight: bold !important;
     padding: 10px 12px; /* تقليل المساحة */
   }
 }
+
+/*Sidebar*/
+
+

@@ -31,14 +31,16 @@ const CardItem = ({ product }) => {
           </Button>
         </Modal.Footer>
       </Modal>
-
-      <img
+   <div style={{width:"200px" , height:"100%"}}>
+   <img
         src={product?.product?.imageCover || mobile}
-        width="160px"
+        width="150px"
         height="100%"
         style={{borderRadius:"10px"}}
         alt=""
       />
+   </div>
+    
       <div className="w-100 p-3">
         <Row className="justify-content-between">
           <Col sm="12" className="d-flex justify-content-between">
@@ -59,7 +61,7 @@ const CardItem = ({ product }) => {
           </Col>
         </Row>
         <Row className="justify-content-center  ">
-          <Col sm="12" className=" d-flex flex-row justify-content-start align-items-center">
+          <Col sm="12" className=" d-flex flex-row  justify-content-start align-items-center">
             <div className="cat-title pt-2 d-inline">
               {product?.product?.title}
             </div>
@@ -87,7 +89,7 @@ const CardItem = ({ product }) => {
           </Col>
         </Row>
         <Row className="justify-content-between">
-          <Col sm="12" className=" d-flex flex-row justify-content-between">
+          <Col sm="12" className=" d-flex flex-row   justify-content-between">
           <div className="d-inline pt-2 d-flex">
               <div className="cat-text mt-2  d-inline">الكميه</div>
               <input

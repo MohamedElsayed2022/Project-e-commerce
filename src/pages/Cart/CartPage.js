@@ -3,7 +3,6 @@ import { Button, Col, Container, Modal, Row, Spinner } from "react-bootstrap";
 import CartItem from "../../components/Cart/CardItem";
 import CartCheckout from "../../components/Cart/CartCheckout";
 import ViewProductInCart from "../../hook/cart/view-product-in-cart";
-import ClearItemsCart from "../../hook/cart/clear-items-cart";
 import { ToastContainer } from "react-toastify";
 
 const CartPage = () => {
@@ -14,6 +13,8 @@ const CartPage = () => {
     totalCartPrice,
     totalCartPriceAfterDiscount,
   ] = ViewProductInCart();
+
+  // console.log("Discount :- " , to)
 
   return (
     <Container style={{ minHeight: "670px" }}>
