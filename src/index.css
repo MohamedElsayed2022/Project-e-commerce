@@ -163,7 +163,6 @@ body {
 }
 .discount-title {
   color: #ffffff;
-  font-family: Cairo;
   font-size: 21px;
   font-weight: bold;
   letter-spacing: 0;
@@ -633,7 +632,6 @@ body {
 
 .stat {
   color: #979797;
-  font-family: Cairo;
   font-size: 16px;
   letter-spacing: 0;
   line-height: 30px;

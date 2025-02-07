@@ -1,6 +1,5 @@
 import React from "react";
-import { Row } from "react-bootstrap";
-import AdminAllProductsCard from "./AdminAllProductsCard";
+import { Row, Spinner } from "react-bootstrap";
 import AdminAllOrdersItem from "./AdminAllOrdersItem";
 import UserGetAllOrdersHook from "../../hook/user/user-get-all-orders-hook";
 import Pagination from "../utils/Pagination";
@@ -13,34 +12,27 @@ const AdminAllOrders = () => {
     <div>
       <div className="admin-content-text">ادارة جميع الطلبات</div>
       <Row className="justify-content-start">
-        {orderData ? (
+        {!orderData || orderData.length === 0 ? (
+          <h2 className="text-dark  mt-2">
+          <div className="d-flex justify-content-center align-items-center gap-2 fs-3">
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+      </div>
+        </h2>
+        ) : (
           orderData.map((order) => (
             <AdminAllOrdersItem key={order._id} order={order} />
           ))
-        ) : (
-          <div class="d-flex justify-content-center">
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-            <div class="spinner-border" role="status">
-              <span class="sr-only">Loading...</span>
-            </div>
-          </div>
         )}
-        
       </Row>
-      {paginate?.numberOfPages >= 2 ? (
+      {paginate?.numberOfPages >= 2 && (
         <Pagination
-          pageCount={paginate?.numberOfPages ? paginate?.numberOfPages : 0}
+          pageCount={paginate?.numberOfPages || 0}
           onPress={onPress}
         />
-      ) : null}
+      )}
     </div>
   );
 };

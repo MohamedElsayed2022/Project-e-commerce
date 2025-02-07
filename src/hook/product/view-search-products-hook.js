@@ -7,7 +7,7 @@ import {
 
 const ViewSearchProductsHook = () => {
   const dispatch = useDispatch();
-  const limit = 6;
+  const limit = 8;
 
   const getProduct = async () => {
      getStorge()

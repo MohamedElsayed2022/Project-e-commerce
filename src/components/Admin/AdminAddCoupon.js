@@ -1,5 +1,5 @@
 import React, { useRef } from 'react'
-import { Col, Row } from 'react-bootstrap'
+import { Col, Row, Spinner } from 'react-bootstrap'
 import { ToastContainer } from 'react-toastify'
 import AddCouponHook from '../../hook/coupon/add-coupon-hook'
 import AdminCouponCard from './AdminCouponCard'
@@ -60,10 +60,17 @@ const AdminAddCoupon = () => {
       <Col sm="8">
       {
         coupons ? ( 
-            coupons.map((coupon , index) =>(
+            coupons?.map((coupon , index) =>(
                 <AdminCouponCard key={index} coupon={coupon}/>
             ))
-        ) : (<h2 className='text-danger text-center justify-content-center align-items-center mt-3' >لا توجد خصومات حاليا</h2>)
+        ) : (<h2 className="text-dark  mt-2">
+          <div className="d-flex justify-content-center align-items-center gap-2 fs-3">
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+        <Spinner animation="border" variant="#55cfdf" />
+      </div>
+      </h2>)
       }
       </Col>
     

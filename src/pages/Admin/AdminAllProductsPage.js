@@ -9,17 +9,11 @@ import ViewProductAdminHook from '../../hook/admin/view-product-admin-hook'
 
 const AdminAllProductsPage = () => {
    const [items , pagination , getPage] = ViewProductAdminHook()
-   if(items)
-    console.log(items)
   if(pagination)
     var pageCount = pagination.numberOfPages
   else
      pageCount = 0
-   useEffect(()=>{
-      console.log(items)
-      console.log(pagination)
-
-   },[])
+   
   return (
     <Container style={{minHeight:"670px"}}>
         <Row className='py-3'>

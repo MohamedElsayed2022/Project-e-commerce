@@ -7,7 +7,7 @@ import HomeBrandHook from '../../hook/brand/home-brand-hook'
 const BrandFeatured = ({ title, btntitle  }) => {
 
     const [brand, loading] = HomeBrandHook();
-    console.log(brand)
+    console.log(":_------------",brand)
     console.log("Loading" , loading)
     console.log(brand)
 

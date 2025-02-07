@@ -14,7 +14,7 @@ const ViewAddressesHook = () => {
     },[])
 
     let Addresses = []
-    if(res)
+    if(res && res.data)
         Addresses = res.data
     
     return [Addresses]

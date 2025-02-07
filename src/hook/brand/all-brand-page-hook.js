@@ -11,7 +11,6 @@ const AllBrandHook = () => {
 
       if(brand.paginationResult){
         pageCount = brand.paginationResult.numberOfPages
-        console.log(pageCount)
         
       }
 
@@ -22,7 +21,6 @@ const AllBrandHook = () => {
   
     const getPage = async(page)=>{
       await dispatch(getAllBrandPage(page));
-      console.log(page)
   
     }
     return [getPage , loading , pageCount  , brand ]
