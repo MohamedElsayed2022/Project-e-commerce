@@ -1,9 +1,6 @@
 import React from 'react'
 import { Col, Container, Row } from 'react-bootstrap'
 import AdminSideBar from '../../components/Admin/AdminSideBar'
-import AdminAllProducts from '../../components/Admin/AdminAllProducts'
-import Pagination from '../../components/utils/Pagination'
-import AdminAllOrders from '../../components/Admin/AdminAllOrders'
 import AdminOrderDetails from '../../components/Admin/AdminOrderDetails'
 
 const AdminOrderDetailsPage = () => {

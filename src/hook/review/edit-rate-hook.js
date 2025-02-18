@@ -19,7 +19,6 @@ const EditRateHook = (review) => {
       setNewRateValue(val)
     }
     const res = useSelector((state)=>state.review.editReview)
-    console.log(res)
     const handelEdit =async()=>{
       setLoading(true)
      await dispatch(updateReviewOnProduct(review._id, {
@@ -32,9 +31,6 @@ const EditRateHook = (review) => {
     useEffect(()=>{
        if(loading === false){
         if(res.status && res.status === 200){
-          console.log(res)
-          console.log(res.status)
-
            notify("تم تعديل المنتج بنجاح " , "success")
            setTimeout(() => {
              window.location.reload(false)

@@ -1,17 +1,16 @@
 import React, { useEffect, useState } from "react";
-import { Form, FormControl, NavDropdown } from "react-bootstrap";
+import { FormControl, NavDropdown } from "react-bootstrap";
 import Container from "react-bootstrap/Container";
 import Nav from "react-bootstrap/Nav";
 import Navbar from "react-bootstrap/Navbar";
 import Logo from "../../images/logo.png";
 import Login from "../../images/login.png";
 import Cart from "../../images/cart.png";
-import { Link, useNavigate } from "react-router-dom";
 import NavbarSearchHook from "../../hook/navbar/navbar-search-hook";
 import ViewProductInCart from "../../hook/cart/view-product-in-cart";
-import notify from "../../hook/useNotification";
+import { Link } from "react-router-dom";
+
 const NavbarLogin = () => {
-  const DataUser = JSON.parse(localStorage.getItem("user"));
   const [OnChangeSearch, searchWord] = NavbarSearchHook();
   let word = "";
   if (localStorage.getItem("searchWord") != null)
@@ -31,16 +30,13 @@ const NavbarLogin = () => {
   };
 
   // cart number
-
   const [cartNum, , , ,] = ViewProductInCart();
-  if (cartNum) console.log(cartNum);
+
   return (
     <Navbar className="sticky-top" bg="dark" variant="dark" expand="sm">
       <Container>
-        <Navbar.Brand href="#home">
-          <a href="/">
-            <img src={Logo} alt="logo" className="logo" />
-          </a>
+        <Navbar.Brand as={Link} to="/">
+          <img src={Logo} alt="logo" className="logo" />
         </Navbar.Brand>
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
@@ -60,12 +56,11 @@ const NavbarLogin = () => {
                 className="nav-text mt-1 d-flex gap-2 justify-content-center"
               >
                 {user.role === "admin" ? (
-                  <NavDropdown.Item href="/admin/allproducts">
-                    {" "}
+                  <NavDropdown.Item as={Link} to="/admin/allproducts">
                     لوحة التحكم
                   </NavDropdown.Item>
                 ) : (
-                  <NavDropdown.Item href="/user/profile">
+                  <NavDropdown.Item as={Link} to="/user/profile">
                     الصفحة الشخصية
                   </NavDropdown.Item>
                 )}
@@ -76,22 +71,24 @@ const NavbarLogin = () => {
               </NavDropdown>
             ) : (
               <Nav.Link
-                href="/login"
-                className="nav-text d-flex mt-3  gap-2 justify-content-center  "
+                as={Link}
+                to="/login"
+                className="nav-text d-flex mt-3 gap-2 justify-content-center"
               >
-                <img src={Login} alt="sfvs" className="login-img" />
+                <img src={Login} alt="login" className="login-img" />
                 <p style={{ color: "white" }}>دخول</p>
               </Nav.Link>
             )}
 
             <Nav.Link
-              href="/cart"
+              as={Link}
+              to="/cart"
               className="nav-text position-relative d-flex gap-2 mt-3 justify-content-center"
               style={{ color: "white" }}
             >
-              <img src={Cart} className="login-img" alt="sfvs" />
+              <img src={Cart} className="login-img" alt="cart" />
               <p style={{ color: "white" }}>العربه</p>
-              <span class="position-absolute top-10 start-0 translate-middle badge rounded-pill bg-danger">
+              <span className="position-absolute top-10 start-0 translate-middle badge rounded-pill bg-danger">
                 {cartNum || 0}
               </span>
             </Nav.Link>

@@ -7,7 +7,6 @@ import { useUpdateData } from "../../hooks/useUpdateData"
 export const createReview =( id , data )=> async(dispatch)=>{
     try{
       const response = await useInsertData(`/api/v1/products/${id}/reviews` , data )
-      console.log(response.data)
       dispatch( {
        type : CREATE_REVIEW,
        payload : response ,

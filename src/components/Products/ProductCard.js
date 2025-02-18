@@ -50,12 +50,12 @@ const ProductCard = ({ item, favProd }) => {
 
           <Card.Body>
             <Card.Title>
-              <div className="card-title">{item.title}</div>
+              <span className="card-title">{item.title}</span>
             </Card.Title>
-            <Card.Text className="d-flex justify-content-between align-items-center">
+            <Card.Text as="div" className="d-flex justify-content-between align-items-center">
               <div className="d-flex">
                 <img src={rate} height="16px" width="16px" alt="Rating" />
-                <div className="card-rate mx-2">{item.ratingsQuantity}</div>
+                <span className="card-rate mx-2">{item.ratingsQuantity}</span>
               </div>
               <div className="d-flex">
                 <div className="card-price">

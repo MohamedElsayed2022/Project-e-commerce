@@ -7,7 +7,6 @@ import { ADD_TO_WISHLIST, REMOVE_FROM_WISHLIST, USER_WISHLIST } from "../type"
 export const addProductToWishlist =(  body )=> async(dispatch)=>{
     try{
       const response = await useInsertData(`/api/v1/wishlist` , body )
-      console.log(response.data)
       dispatch( {
        type : ADD_TO_WISHLIST,
        payload : response ,
@@ -25,7 +24,6 @@ export const addProductToWishlist =(  body )=> async(dispatch)=>{
 export const removeProductFromWishlist =( id )=> async(dispatch)=>{
     try{
       const response = await useDeleteData(`/api/v1/wishlist/${id}`  )
-      console.log(response.data)
       dispatch( {
        type : REMOVE_FROM_WISHLIST,
        payload : response ,
@@ -43,7 +41,6 @@ export const removeProductFromWishlist =( id )=> async(dispatch)=>{
 export const getProductWishlist =(  )=> async(dispatch)=>{
     try{
       const response = await useGetDataToken(`/api/v1/wishlist`  )
-      console.log(response.data)
       dispatch( {
        type : USER_WISHLIST,
        payload : response ,

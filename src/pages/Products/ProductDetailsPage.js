@@ -11,11 +11,11 @@ import { useParams } from 'react-router-dom'
 
 const ProductDetailsPage = () => {
   const {id} = useParams()
-  const [item, images, cat , brand , items] = ViewProductsDetailsHook(id)
+  const [item, ,  ,  , items] = ViewProductsDetailsHook(id)
   if(item){
-    var rateAvg = item.ratingsAverage
-    var rateQty = item.ratingsQuantity
-    var reviews = item.reviews
+    var rateAvg = item?.ratingsAverage
+    var rateQty = item?.ratingsQuantity
+    var reviews = item?.reviews
   }
   return (
     <div style={{minHeight:"670px"}}>

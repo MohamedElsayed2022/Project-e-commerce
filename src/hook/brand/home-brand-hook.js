@@ -11,7 +11,6 @@ const HomeBrandHook = () => {
    let brand
   if(brands)
     brand = brands.data
-
   
 
   return [  brand , loading ]

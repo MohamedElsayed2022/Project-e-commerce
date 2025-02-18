@@ -13,7 +13,6 @@ import ChangeOrderStatusDeliverHook from '../../hook/admin/change-order-status-d
 
 const AdminOrderDetails = () => {
     const {id} = useParams()
-    console.log("ID :-" , id)
     const [order , cartItems] = AdminGetOneOrderHook(id)
     const [ onChangePaid  , statusPay , changePayOrder] = ChangeOrderStatusHook(id)
     const [ onChangeDelivered  , statusDelivered , changeDeliOrder]=ChangeOrderStatusDeliverHook(id)

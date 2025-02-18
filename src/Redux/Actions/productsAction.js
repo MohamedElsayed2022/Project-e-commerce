@@ -7,7 +7,6 @@ import { useUpdateDataWithImage } from "../../hooks/useUpdateData"
 export const createProduct =(data)=> async(dispatch)=>{
     try{
       const response = await useInsertDataWithImage(`/api/v1/products` , data )
-      console.log(response.data)
       dispatch( {
        type : CREATE_PRODUCT,
        payload : response ,
@@ -26,7 +25,6 @@ export const createProduct =(data)=> async(dispatch)=>{
 export const getAllProducts =(limit)=> async(dispatch)=>{
   try{
     const response = await useGetData(`/api/v1/products?limit=${limit}`)
-    console.log(response.data)
     dispatch( {
      type : GET_ALL_PRODUCTS,
      payload : response ,
@@ -45,7 +43,6 @@ export const getAllProducts =(limit)=> async(dispatch)=>{
 export const getAllProductsPage =(page)=> async(dispatch)=>{
   try{
     const response = await useGetData(`api/v1/products?limit=10&page=${page}`)
-    console.log(response.data)
     dispatch( {
      type : GET_ALL_PRODUCTS,
      payload : response ,
@@ -85,7 +82,6 @@ export const getAllProductsSearch = (queryString) => async (dispatch) => {
 export const getOneProduct =(id)=> async(dispatch)=>{
   try{
     const response = await useGetData(`/api/v1/products/${id}`)
-    console.log(response.data)
     dispatch( {
      type : GET_ONE_PRODUCT,
      payload : response ,
@@ -104,7 +100,6 @@ export const getOneProduct =(id)=> async(dispatch)=>{
 export const getProductLike =(id)=> async(dispatch)=>{
   try{
     const response = await useGetData(`api/v1/products/?category=${id}`)
-    console.log(response.data)
     dispatch( {
      type : GET_PRODUCT_LIKE,
      payload : response ,
@@ -123,7 +118,6 @@ export const getProductLike =(id)=> async(dispatch)=>{
 export const deleteProduct =(id)=> async(dispatch)=>{
   try{
     const response = await useDeleteData(`api/v1/products/${id}`)
-    console.log(response.data)
     dispatch( {
      type : DELETE_PRODUCT,
      payload : response ,
@@ -142,7 +136,6 @@ export const deleteProduct =(id)=> async(dispatch)=>{
 export const updateProducts =(id , data)=> async(dispatch)=>{
   try{
     const response = await useUpdateDataWithImage(`/api/v1/products/${id}` , data)
-    console.log(response.data)
     dispatch( {
      type : UPDATE_PRODUCT,
      payload : response ,
@@ -161,7 +154,6 @@ export const updateProducts =(id , data)=> async(dispatch)=>{
 export const getAllProductsByCategory =(limit , page , categoryID)=> async(dispatch)=>{
   try{
     const response = await useGetDataToken(`/api/v1/products?limit=${limit}&page=${page}&category=${categoryID}`)
-    console.log(response.data)
     dispatch( {
      type : GET_ALL_PRODUCTS_BY_CATEGORY,
      payload : response ,
@@ -181,7 +173,6 @@ export const getAllProductsByCategory =(limit , page , categoryID)=> async(dispa
 export const getAllProductsByBrand =(limit , page , brandID)=> async(dispatch)=>{
   try{
     const response = await useGetDataToken(`/api/v1/products?limit=${limit}&page=${page}&brand=${brandID}`)
-    console.log(response.data)
     dispatch( {
      type : GET_ALL_PRODUCTS_BY_BRAND,
      payload : response ,

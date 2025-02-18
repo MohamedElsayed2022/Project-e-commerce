@@ -26,11 +26,9 @@ const ViewProductsDetailsHook = (prodID) => {
         dispatch(getOneCategory(item.category));
     if(item.brand){
         dispatch(getOneBrand(item.brand))
-        console.log(oneBrand)
     }
     if (item.category) 
       dispatch(getProductLike(item.category));
-    console.log(productLike)
         
   }, [item]);
   //to show images of array
@@ -67,9 +65,6 @@ const ViewProductsDetailsHook = (prodID) => {
 
 
     const items = Array.isArray(prod) ? prod.slice(0, 4) : []
-
-   
-   //[item, images, cat , brand , items , onChangeReview , onChangeStars , review ,stars ]
 
   return [item, images, cat , brand , items  ];
 };

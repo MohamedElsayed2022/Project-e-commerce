@@ -15,7 +15,7 @@ const CardProductsContainer = ({ title, btntitle, PathTitle, products }) => {
         <SubTitle title={title} btntitle={btntitle} PathTitle={PathTitle} />
       ) : null}
       <Row className=" d-flex justify-content-start">
-        {products
+        {products 
           ? products.map((product, index) => (
               <ProductCard  item={product} favProd={favProd} key={index} />
             ))

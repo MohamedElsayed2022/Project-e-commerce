@@ -9,7 +9,6 @@ import { ADD_COUPON, APPLY_COUPON, DELETE_COUPON, EDIT_COUPON, GET_ALL_COUPONS, 
 export const addCoupon =(body)=> async(dispatch)=>{
     try{
       const response = await useInsertData(`/api/v1/coupons` , body )
-      console.log(response.data)
       dispatch( {
        type : ADD_COUPON,
        payload : response ,
@@ -27,7 +26,6 @@ export const addCoupon =(body)=> async(dispatch)=>{
 export const getAllCoupons =()=> async(dispatch)=>{
     try{
       const response = await useGetDataToken(`/api/v1/coupons` )
-      console.log(response.data)
       dispatch( {
        type : GET_ALL_COUPONS,
        payload : response ,
@@ -45,7 +43,6 @@ export const getAllCoupons =()=> async(dispatch)=>{
 export const deleteCoupon =(couponID)=> async(dispatch)=>{
     try{
       const response = await useDeleteData(`api/v1/coupons/${couponID}` )
-      console.log(response.data)
       dispatch( {
        type : DELETE_COUPON,
        payload : response ,
@@ -63,7 +60,6 @@ export const deleteCoupon =(couponID)=> async(dispatch)=>{
 export const getOneCoupon =(couponID)=> async(dispatch)=>{
   try{
     const response = await useGetDataToken(`/api/v1/coupons/${couponID}` )
-    console.log(response.data)
     dispatch( {
      type : GET_ONE_COUPON,
      payload : response ,
