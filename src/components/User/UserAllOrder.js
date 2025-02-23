@@ -3,11 +3,9 @@ import { Row, Spinner } from "react-bootstrap";
 import UserAllOrderItem from "./UserAllOrderItem";
 import UserGetAllOrdersHook from "../../hook/user/user-get-all-orders-hook";
 import Pagination from "../utils/Pagination";
-import { useDispatch } from "react-redux";
-import { getOrdersPage } from "../../Redux/Actions/ordersAction";
 
 const UserAllOrder = () => {
-  const [username , results ,paginate , orderData , onPress  ] = UserGetAllOrdersHook();
+  const [ , results ,paginate , orderData , onPress  ] = UserGetAllOrdersHook();
   
   return (
     <div>
@@ -29,7 +27,6 @@ const UserAllOrder = () => {
       {
          paginate?.numberOfPages >=2 ? (
           <Pagination pageCount={paginate?.numberOfPages ? paginate?.numberOfPages : 0} onPress={onPress} />
-
          ) : (null)
       }
     </div>

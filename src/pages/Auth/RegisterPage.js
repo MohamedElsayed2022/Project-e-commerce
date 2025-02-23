@@ -24,7 +24,7 @@ const RegisterPage = () => {
       <Container style={{ minHeight: "680px" }}>
         <Row className="d-flex justify-content-center">
           <Col sm="12" className="d-flex flex-column">
-            <label className="mx-auto text-login my-3">تسجيل جديد</label>
+            <label className="mx-auto text-login my-3" style={{ fontSize: "28px", fontWeight: "bold", color: "#333" }}>تسجيل جديد</label>
             <input
             value={name}
             onChange={onNameChange}
@@ -65,7 +65,7 @@ const RegisterPage = () => {
             <label className="mx-auto ">
               اذا لديك حساب بالفعل؟
               <Link to="/login" style={{ textDecoration: "none" }} >
-                <span style={{ cursor: "pointer" }} className="text-danger">
+                <span style={{ cursor: "pointer", fontWeight: "bold" }} className="text-danger">
                   اضغط هنا
                 </span>
               </Link>

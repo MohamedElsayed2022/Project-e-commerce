@@ -21,7 +21,7 @@ const UserAllOrderCard = ({ cart }) => {
             <img
               width="93px"
               height="120px"
-              src={items?.product?.imageCover}
+              src={ items?.product?.imageCover} //`${"http://127.0.0.1:8000/products/"}`+
               alt=""
               className="rounded"
             />

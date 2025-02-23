@@ -16,19 +16,21 @@ const OrderPayCashHook = () => {
      const navigate = useNavigate()
 
     const dispatch = useDispatch()
+    const get = async (id)=>{
+      setLoading(true)
+       await dispatch(getOneAddress(id))
+       setLoading(false)
+   }
+    
     const handelChooseAddress =(e)=>{
         console.log(e.target.value)
-        // setAddressDetails([])
         if(e.target.value !== '0'){
           get(e.target.value)
         }
 
+
+
     }
-    const get = async (id)=>{
-        setLoading(true)
-         await dispatch(getOneAddress(id))
-         setLoading(false)
-     }
   
     const resAddress = useSelector((state)=>state.address.oneAddress)
     useEffect(()=>{

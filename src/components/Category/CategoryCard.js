@@ -12,8 +12,10 @@ const CategoryCard = ({ background, img, title, id, des }) => {
     >
       <div className="allCard mb-3 ">
         <div
-          className="categoty-card "
-          style={{ backgroundColor: `${background}` }}
+          className="categoty-card shadow-lg "
+          style={{height:"100px"}}
+          // style={{ backgroundColor: `${background}` }}
+          
         ></div>{" "}
         <Link
           to={`/products/category/${id}`}

@@ -1,12 +1,8 @@
-import React, { useEffect, useState } from "react";
+import React from "react";
 import UserAllOrderCard from "./UserAllOrderCard";
 import { Col, Row } from "react-bootstrap";
-import Pagination from "../utils/Pagination";
 
 const UserAllOrderItem = ({order}) => {
-  
-  console.log("Order Status :- " , order.isDelivered)
-  console.log(order.cartItems)
   const formatDate = (dateString) => {
     const options = { year: "numeric", month: "numeric", day: "numeric" }
     return new Date(dateString).toLocaleDateString(undefined, options)

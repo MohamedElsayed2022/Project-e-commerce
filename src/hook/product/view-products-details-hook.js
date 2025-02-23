@@ -8,8 +8,11 @@ import { getOneBrand } from "../../Redux/Actions/brandAction";
 const ViewProductsDetailsHook = (prodID) => {
   const dispatch = useDispatch();
   useEffect(() => {
-    dispatch(getOneProduct(prodID));
-  }, []);
+    const getOne = async()=>{
+      await  dispatch(getOneProduct(prodID));
+    }
+    getOne()
+  }, [prodID]);
   const oneProduct = useSelector((state) => state.allproducts.oneProduct);
   const oneCategory = useSelector((state) => state.allcategory.oneCategory);
   const oneBrand = useSelector((state) => state.allbrand.oneBrand);

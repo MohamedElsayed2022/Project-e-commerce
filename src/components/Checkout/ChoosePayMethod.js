@@ -6,7 +6,7 @@ import ViewProductInCart from '../../hook/cart/view-product-in-cart'
 import { ToastContainer } from 'react-toastify'
 
 const ChoosePayMethod = () => {
-   const [handelChooseAddress , addressDetails , handleCreateOrderCash ] = OrderPayCashHook()
+   const [handelChooseAddress ,  , handleCreateOrderCash  ] = OrderPayCashHook()
    const [
     ,
     ,
@@ -15,8 +15,6 @@ const ChoosePayMethod = () => {
     ,
   ] = ViewProductInCart();
     const [Addresses] = ViewAddressesHook()
-   console.log("Addresses" , Addresses)
-   console.log("Address Details :- " , addressDetails)
   return (
     <div>
     <div className="admin-content-text pt-5">اختر طريقة الدفع</div>
@@ -31,7 +29,7 @@ const ChoosePayMethod = () => {
                     value="الدفع عن طريق الفيزا"
                     className="mt-2"
                 />
-                <label style={{cursor:"pointer"}} className="mx-2" for="group2">
+                <label style={{cursor:"pointer"}} className="mx-2" htmlFor="group2">
                     الدفع عن طريق البطاقه الائتمانية
                 </label>
             </Col>
@@ -60,8 +58,9 @@ const ChoosePayMethod = () => {
             id="address"
             className="select mt-3 px-2 "
             onChange={ handelChooseAddress}
+            
           >
-            <option value="0"> اختر عنوان للشحن</option>
+            <option value="0" htmlFor="address"> اختر عنوان للشحن</option>
           
               {
                 Addresses ? Addresses.map((address) =>{

@@ -18,7 +18,6 @@ const AdminOrderDetails = () => {
     const [ onChangeDelivered  , statusDelivered , changeDeliOrder]=ChangeOrderStatusDeliverHook(id)
   return (
     <div className=''>
-    {/* <div className='admin-content-text'> تم بتاريخ...({formatDate(order.createdAt)})  </div> */}
    
     <UserAllOrderItem order={order} />
 
