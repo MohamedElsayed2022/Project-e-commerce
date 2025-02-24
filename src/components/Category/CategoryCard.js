@@ -13,7 +13,7 @@ const CategoryCard = ({ background, img, title, id, des }) => {
       <div className="allCard mb-3 ">
         <div
           className="categoty-card shadow-lg "
-          style={{height:"100px"}}
+          style={{height:"100px" , backgroundColor: `${background}`}}
           // style={{ backgroundColor: `${background}` }}
           
         ></div>{" "}

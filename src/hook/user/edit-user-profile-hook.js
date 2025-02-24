@@ -115,10 +115,11 @@ const EditUserProfileHook = () => {
     if (loadingPass === false) {
       if (resPass && resPass.status === 200) {
         notify("تم تغيير كلمة السر بنجاح", "success");
+       
         setTimeout(() => {
-            localStorage.removeItem("user");
-            localStorage.removeItem("token");
-          navigate("/login");
+          localStorage.removeItem("user");
+          localStorage.removeItem("token");
+          window.location.href = "/login"
         }, 1500);
       } else {
         notify("هناك خطأ فى تغيير كلمة السر", "warn");
