@@ -14,7 +14,7 @@ const HomeCategory = () => {
       <Row className="my-2 d-flex justify-content-between">
         {
           !loading ? (
-            category?.data?.length > 0 ? (
+            category?.data?.length > 0 && (
               category.data.slice(0, 5).map((item, index) => (
                 <CategoryCard
                   key={item.id || index} // Ensure each item has a unique key
@@ -24,8 +24,6 @@ const HomeCategory = () => {
                   img={item.image}
                 />
               ))
-            ) : (
-              <h4 className="text-center text-danger mt-2">لايوجد تصنيفات</h4>
             )
           ) : (
             <div className="d-flex justify-content-center align-items-center gap-2 fs-3">

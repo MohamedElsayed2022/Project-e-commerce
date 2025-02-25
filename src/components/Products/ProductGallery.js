@@ -1,11 +1,9 @@
 import React from "react";
 import ReactImageGallery from "react-image-gallery";
 import "react-image-gallery/styles/css/image-gallery.css";
-import mobile from "../../images/mobile.png";
 import RightButton from "./RightButton";
 import LeftButton from "./LeftButton";
 import { useParams } from "react-router-dom";
-import { getOneProduct } from "../../Redux/Actions/productsAction";
 import ViewProductsDetailsHook from "../../hook/product/view-products-details-hook";
 import { Col, Row } from "react-bootstrap";
 

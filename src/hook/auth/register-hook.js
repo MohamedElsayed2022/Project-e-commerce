@@ -43,32 +43,27 @@ const RegisterHook = () => {
     return regex.test(password);
   }
   const validationValues = () => {
-    // || !isValidName(name)
-
-    if (name === "" ) {
-      notify("يرجى ادخال اسم المستخدم", "error");
-      return;
+    if (name === "" || !isValidName(name)) {
+        return;
     }
     if (email === "" || !isValidEmail(email)) {
-      notify("من فضلك ادخل بريد إلكتروني صحيح", "error");
-      return;
+        notify("من فضلك ادخل بريد إلكتروني صحيح", "error");
+        return;
     }
     if (phone === "" || phone.length < 10 || phone.length > 15) {
-      notify("من فضلك اخل رقم الهاتف  (من 10 الى 15 رقما)", "error");
-      return;
+        notify("من فضلك اخل رقم الهاتف  (من 10 الى 15 رقما)", "error");
+        return;
     }
     if (password === "" || !isValidPassword(password)) {
-      notify(
-        "من فضلك ادخل كلمة سر صحيحة (على الأقل 8 أحرف، وتحتوي على أحرف كبيرة وصغيرة وأرقام وأحرف خاصة)",
-        "error"
-      );
-      return;
+        notify("من فضلك ادخل كلمة سر صحيحة (على الأقل 8 أحرف، وتحتوي على أحرف كبيرة وصغيرة وأرقام وأحرف خاصة)", "error");
+        return;
     }
     if (password !== confirmPassword) {
-      notify("كلمة المرور غير متطابقة", "error");
-      return;
+        notify("كلمة المرور غير متطابقة", "error");
+        return;
     }
-  };
+};
+
 
   const OnSubmit = async () => {
     validationValues();
@@ -114,6 +109,10 @@ const RegisterHook = () => {
       if (res.data.errors) {
         if (res.data.errors[0].msg === "accept only egypt phone numbers")
             notify("رقم التليفون يجب ان يكون مصرى فقط", "error")
+      }
+      if (res.data.errors) {
+        if (res.data.errors[0].msg === "must be at least 3 chars")
+            notify("يجب ادخال اسم اكثر من 3 احرف", "error")
       }
     }
     }
